@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export const LoginPage = () =>{
 
 
@@ -37,12 +38,14 @@ export const LoginPage = () =>{
         console.log('works');
     };
 
+ 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <input id='usr' className="typingBox" type="text" placeholder="username" /> <br />
                 <input id='pswrd' className="typingBox" type="text" placeholder="password" /> <br />
-                <button type='submit' className="submitBtn">Login</button>
+                <button type='submit' onClick={handleSubmit} className="submitBtn">Login</button>
+                <p>Don't have an Account? <Link to="/register">Click to register!</Link></p>
             </form>
         </>
     );
